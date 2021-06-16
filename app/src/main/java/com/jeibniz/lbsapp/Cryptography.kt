@@ -12,9 +12,7 @@ import javax.crypto.spec.IvParameterSpec
 
 
 class Cryptography {
-
     fun generateSecretKey() {
-
         // Define key specs
         val spec = KeyGenParameterSpec
             // Name of the the key in the storage and state that is it for encryption/decryption
@@ -28,7 +26,6 @@ class Cryptography {
             .setKeySize(128)
             // Create an instance of KeyGenParameterSpec
             .build()
-
         // Create a KeyGenerator object made for AES Algorithm with the name of the key provider
         val keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, KEY_STORE)
         // Initialize the key generator with spec parameter sets
@@ -80,11 +77,9 @@ class Cryptography {
             null
         }
     }
-
     companion object {
         const val KEY_ALIAS: String = "demoKey"
         const val KEY_STORE: String = "AndroidKeyStore"
         const val INSTANCE_MODE: String = "AES/CBC/PKCS7Padding"
     }
-
 }
